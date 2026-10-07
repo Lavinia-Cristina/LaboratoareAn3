@@ -83,20 +83,44 @@ public class Main {
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                matrice[1][j] = "*";
-                matrice[n][j] = "*";
-                matrice[i][1] = "*";
-                matrice[i][m] = "*";
+                matrice[i][j] = " ";
+                matrice[0][j] = "*";
+                matrice[n-1][j] = "*";
+                matrice[i][0] = "*";
+                matrice[i][m-1] = "*";
             }
         }
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                System.out.println(matrice[i][j] + " ");
-                System.out.println();
+                System.out.print(matrice[i][j] + " ");
+
+            }
+            System.out.println();
+        }
+
+        System.out.println();
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                matrice[i][j] = " ";
+                if (i==j)
+                    matrice[i][j]="*";
+                else if (j==n-i-1)
+                    matrice[i][j]="*";
             }
 
-        }
     }
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                System.out.print(matrice[i][j] + " ");
+
+            }
+            System.out.println();
+        }
+
+        System.out.println();
+    }
+
 
 }
