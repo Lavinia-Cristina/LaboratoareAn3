@@ -1,4 +1,4 @@
-package org.example;
+package Laborator1;
 
 public class Invers {
     String cuvant;

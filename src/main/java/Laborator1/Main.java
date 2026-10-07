@@ -1,7 +1,6 @@
-package org.example;
+package Laborator1;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.Random;
 
 
