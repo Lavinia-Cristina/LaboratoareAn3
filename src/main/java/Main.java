@@ -20,17 +20,18 @@ void main() {
         y.add(random2.nextInt(10));
     }
 
-    System.out.println(x);
+
+    System.out.println("Acesta e x: " + x);
     System.out.println();
-    System.out.println(y);
+    System.out.println("Acesta e y: " + y);
     System.out.println();
 
     System.out.println("ACUM SUNT SORTATE:");
 
     Collections.sort(x);
     Collections.sort(y);
-    System.out.println(x);
-    System.out.println(y);
+    System.out.println("Acesta e x: " + x);
+    System.out.println("Acesta e y: "+ y);
 
     System.out.println();
 
@@ -53,9 +54,30 @@ void main() {
     zSet.addAll(x);
     zSet.addAll(y);
     System.out.println(zSet);
+    System.out.println();
 
 
 
+    System.out.println("c) XMinusY");
+    xMinusY.addAll(x);
+    xMinusY.addAll(y);
+    xMinusY.removeAll(y);
 
+    System.out.println(xMinusY);
+    System.out.println();
+
+
+    System.out.println("d) xPlusYLimitedByP");
+
+    xPlusYLimitedByP.addAll(x);
+    xPlusYLimitedByP.addAll(y);
+
+    for (Integer integer : xPlusYLimitedByP) {
+        if (integer < p)
+            xMinusY.removeAll(x);
+            xMinusY.removeAll(y);
+
+    }
+    System.out.println(xPlusYLimitedByP);
 
 }
