@@ -1,3 +1,5 @@
+import Laborator2.Student;
+
 import java.util.Random;
 
 void main() {
@@ -19,6 +21,8 @@ void main() {
     for (int i = 1; i <= 7; i++) {
         y.add(random2.nextInt(10));
     }
+
+    System.out.println("PROBLEMA 1: ");
 
 
     System.out.println("Acesta e x: " + x);
@@ -85,5 +89,14 @@ void main() {
     }
 
     System.out.println(xPlusYLimitedByP);
+    System.out.println();
 
+    System.out.println("PROBLEMA 2: ");
+
+    List<Student> studenti = new ArrayList<>();
+    studenti.add(new Student("Popescu", "Marian", "ISM 31/2"));
+    studenti.add(new Student("Botea", "Lavinia", "ISM 31/2"));
+    studenti.add(new Student("Sandu", "Mihai", "ISM 31/2"));
+    studenti.add(new Student("Juno", "Yuno", "TI 31/1"));
+    studenti.add(new Student("Flori", "Florin", "Calculatoare 31/2"));
 }
