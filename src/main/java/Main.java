@@ -31,7 +31,7 @@ void main() {
     Collections.sort(x);
     Collections.sort(y);
     System.out.println("Acesta e x: " + x);
-    System.out.println("Acesta e y: "+ y);
+    System.out.println("Acesta e y: " + y);
 
     System.out.println();
 
@@ -57,7 +57,6 @@ void main() {
     System.out.println();
 
 
-
     System.out.println("c) XMinusY");
     xMinusY.addAll(x);
     xMinusY.addAll(y);
@@ -69,15 +68,22 @@ void main() {
 
     System.out.println("d) xPlusYLimitedByP");
 
-    xPlusYLimitedByP.addAll(x);
-    xPlusYLimitedByP.addAll(y);
 
-    for (Integer integer : xPlusYLimitedByP) {
-        if (integer < p)
-            xMinusY.removeAll(x);
-            xMinusY.removeAll(y);
+/*    for (int i = xPlusY.size()-1; i >= 0; i--) {
+        Integer v = xPlusY.get(i);
+        if (v < p) {
+            xPlusYLimitedByP.add(v);
+        }
+    }*/
 
+    xPlusYLimitedByP.addAll(xPlusY);
+    Iterator<Integer> i = xPlusYLimitedByP.iterator();
+    while (i.hasNext()) {
+        if (i.next() >= p) {
+            i.remove();
+        }
     }
+
     System.out.println(xPlusYLimitedByP);
 
 }
