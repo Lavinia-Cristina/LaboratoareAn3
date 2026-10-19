@@ -99,4 +99,23 @@ void main() {
     studenti.add(new Student("Sandu", "Mihai", "ISM 31/2"));
     studenti.add(new Student("Juno", "Yuno", "TI 31/1"));
     studenti.add(new Student("Flori", "Florin", "Calculatoare 31/2"));
+
+    Random random3 = new Random();
+    for(Student student : studenti){
+        for(int k=0; k< 5; k++){
+            student.AdaugaNota(random.nextInt(7)+4);
+        }
+        System.out.println(student);
+    }
+
+
+    System.out.println("Ordonate dupa grupa apoi dupa nume");
+    Collections.sort(studenti, new Comparator<Student>() {
+        @Override
+        public int compare(Student o1, Student o2) {
+            return 0;
+        }
+    });
+
+
 }
