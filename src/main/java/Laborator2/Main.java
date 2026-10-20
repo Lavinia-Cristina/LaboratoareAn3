@@ -90,9 +90,10 @@ void main() {
 
     System.out.println(xPlusYLimitedByP);
     System.out.println();
+    System.out.println();
 
     System.out.println("PROBLEMA 2: ");
-
+    System.out.println();
     List<Student> studenti = new ArrayList<>();
     studenti.add(new Student("Popescu", "Marian", "ISM 31/2"));
     studenti.add(new Student("Botea", "Lavinia", "ISM 31/2"));
@@ -109,13 +110,69 @@ void main() {
     }
 
 
-    System.out.println("Ordonate dupa grupa apoi dupa nume");
+    List<Student> integralisti = new ArrayList<>();
+    List<Student> restantieri = new ArrayList<>();
+
+    for (Student s : studenti) {
+        if (s.esteIntegralist()) {
+            integralisti.add(s);
+        } else {
+            restantieri.add(s);
+        }
+    }
+
+
     Collections.sort(studenti, new Comparator<Student>() {
         @Override
-        public int compare(Student o1, Student o2) {
-            return 0;
+        public int compare(Student s1, Student s2) {
+            int comparagrupa = s1.getGrupa().compareTo(s2.getGrupa());
+            if (comparagrupa != 0) return comparagrupa;
+
+            int comparanume = s1.getNume().compareTo(s2.getNume());
+            if (comparanume != 0) return comparanume;
+
+            return s1.getPrenume().compareTo(s2.getPrenume());
         }
     });
+    System.out.println();
+
+    System.out.println();
+    System.out.println("b1) Studenti ordonati alfabetic dupa grupa: ");
+    System.out.println();
+    for (Student s : studenti) {
+        System.out.println(s);
+    }
+
+    System.out.println();
+    Collections.sort(integralisti, new Comparator<Student>() {
+        @Override
+        public int compare(Student s1, Student s2) {
+            return Double.compare(s2.getMedie(), s1.getMedie());
+        }
+    });
+    System.out.println();
+
+
+    System.out.println("b2) Integralisti ordonati descrescator dupa medie");
+    System.out.println();
+    for (Student s : integralisti) {
+        System.out.println(s + " | Medie: " + s.getMedie());
+    }
+
+
+    Collections.sort(restantieri, new Comparator<Student>() {
+        @Override
+        public int compare(Student s1, Student s2) {
+            return Integer.compare(s1.getNumarRestante(), s2.getNumarRestante());
+        }
+    });
+    System.out.println();
+    System.out.println();
+    System.out.println("b3) Restantieri ordonati crescator dupa nr de restante");
+    System.out.println();
+    for (Student s : restantieri) {
+        System.out.println(s + " | Restante: " + s.getNumarRestante());
+    }
 
 
 }
